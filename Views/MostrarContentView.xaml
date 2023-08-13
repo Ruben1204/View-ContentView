@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controles ="clr-namespace:ControlesTipoVista.Controles"
+             x:Class="ControlesTipoVista.Views.MostrarContentView"
+             Title="MostrarContentView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="CardViewCompressed">
+                <HorizontalStackLayout BackgroundColor="LightBlue" WidthRequest="220" HorizontalOptions="Start" Margin="10">
+                    <Image Source="{TemplateBinding IconImageSource}"
+                           BackgroundColor="{TemplateBinding IconBackgroundColor}"
+                           WidthRequest="100"
+                           HeightRequest="100"
+                           Aspect="AspectFit"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="{TemplateBinding CardTitle}"
+                               FontAttributes="Bold"
+                               Margin="10"/>
+                    </StackLayout>
+                </HorizontalStackLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <controles:CardView BorderColor="DarkGray"
+                           CardTitle="Ruben Rueda"
+                           IconBackgroundColor="LightGray"
+                           IconImageSource="dotnet_bot.png"
+                           ControlTemplate="{StaticResource CardViewCompressed}" /> 
+    </VerticalStackLayout>
+</ContentPage>
